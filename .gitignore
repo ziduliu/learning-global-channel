@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.tgz
+*.synctex.gz
+*.aux
+*.log
+!fig5_shallow_circuit_cmi/run_dense_eps.log
+!fig6_fig7_random_clifford_cmi/wg1k_*.log
+# regenerated figures
+fig*/*.pdf
+fig*/*.png
