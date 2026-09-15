@@ -26,7 +26,7 @@ The data generation for Figs. 2–4 was run on a SLURM cluster; the job scripts 
 
 ## Usage
 
-Run each plotting script inside its directory; it reads the data by relative path and
+Run each plotting script inside its directory. It reads the data by relative path and
 writes the figure next to it. Data generation commands are given in the per-directory
 READMEs. Quantities that involve random circuits or random noise samples are reproduced
 as ensemble averages within the quoted statistical errors.
