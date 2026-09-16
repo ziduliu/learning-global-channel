@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=f2eta010
+#SBATCH --job-name=fig2_noisy
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
@@ -11,4 +11,4 @@
 module purge; module load anaconda/3/2023.03
 source activate $HOME/.conda/envs/quimb_env
 export OMP_NUM_THREADS=10 OPENBLAS_NUM_THREADS=10
-python -u main.py ${SLURM_ARRAY_TASK_ID}
+python -u reconstruct_noisy.py ${SLURM_ARRAY_TASK_ID}

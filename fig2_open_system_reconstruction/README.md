@@ -14,7 +14,7 @@ marginals (w = 1) with CVXPY/SCS.
 | `_functions_.py`, `dynamics.py`, `data_processing.py` | helper routines (MPO marginals, `mpo_grow`, CPTP constraint, Pauli-weight sums) |
 | `noise_gauss.py` | tomography-noise model: Gaussian noise on the Pauli expectation values of a window, hermitization, clipping of negative eigenvalues, renormalization; returns η_i = ½‖Ĵ_i − J_i‖₁ |
 | `noise_shadow.py` | shadow-noise variant (imported by `reconstruct_noisy.py`, not used for the figure) |
-| `job.sh` | SLURM array job |
+| `job_noiseless.sh`, `job_noisy.sh` | SLURM array jobs for the two scripts (array index = time index or noise-level index, see above; set `REP` in the environment for the noisy runs) |
 | `plot_fig2.py` | plots the four panels from `data/` |
 
 ## Data
@@ -35,5 +35,6 @@ realizations against η = max_i η_i.
 
 ```
 python plot_fig2.py      # -> fig2_panels.pdf / fig2_panels.png
-sbatch job.sh
+sbatch job_noiseless.sh
+REP=0 sbatch --export=ALL,REP job_noisy.sh
 ```
